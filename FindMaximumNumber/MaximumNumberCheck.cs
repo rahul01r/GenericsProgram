@@ -6,43 +6,39 @@ using System.Threading.Tasks;
 
 namespace FindMaximumNumber
 {
-    public class MaximumNumberCheck
+    public class MaximumNumberCheck<T> where T : IComparable<T>
     {
-        public static int FindMaxIntNumber(int firstNum, int secondNum, int thirdNum)
+        public T first, second, third;
+
+        public MaximumNumberCheck(T first, T second, T third)
         {
-            if (firstNum.CompareTo(secondNum) > 0 && firstNum.CompareTo(thirdNum) > 0)
-                return firstNum;
-                
-            if (secondNum.CompareTo(firstNum) > 0 && secondNum.CompareTo(thirdNum) > 0)
-                return secondNum;
-         
-            else
-                return thirdNum;
-                
+            this.first = first;
+            this.second = second;
+            this.third = third;
         }
-        public static double FindMaxDoubleNumber(double firstNum, double secondNum, double thirdNum)
+        public T GetMaxNum()
         {
-            if (firstNum.CompareTo(secondNum) > 0 && firstNum.CompareTo(thirdNum) > 0)
-                return firstNum;
+            if (first.CompareTo(second) == 0)
+            {
+                if (first.CompareTo(third) == 1)
+                    return first;
+                else
+                    return third;
+            }
+            else if (first.CompareTo(third) == 0)
+            {
+                if (first.CompareTo(second) == 1)
+                    return first;
+                else
+                    return second;
+            }
 
-            if (secondNum.CompareTo(firstNum) > 0 && secondNum.CompareTo(thirdNum) > 0)
-                return secondNum;
-
+            if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)
+                return first;
+            else if (second.CompareTo(first) > 0 && second.CompareTo(third) > 0)
+                return second;
             else
-                return thirdNum;
-
-        }
-        public static string FindMaxStringNumber( string firstNum, string secondNum, String thirdNum)
-        {
-            if (firstNum.CompareTo(secondNum) > 0 && firstNum.CompareTo(thirdNum) > 0)
-                return firstNum;
-
-            if (secondNum.CompareTo(firstNum) > 0 && secondNum.CompareTo(thirdNum) > 0)
-                return secondNum;
-
-            else
-                return thirdNum;
-
+                return third;
         }
     }
 }

@@ -12,17 +12,50 @@
                 switch (option)
                 {
                     case 1:
-                        int Output = MaximumNumberCheck.FindMaxIntNumber(12, 11, 18);
-                        Console.WriteLine("Greatest No. is:"+Output);
+                        Console.WriteLine("Enter the First number: ");
+                        int first = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Enter the second number: ");
+                        int second = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Enter the third number: ");
+                        int third = Convert.ToInt32(Console.ReadLine());
+
+                       MaximumNumberCheck<int> maxnumObj = new MaximumNumberCheck<int>(first, second, third);
+                        int maxNumber = maxnumObj.GetMaxNum();
+
+                        Console.WriteLine("your max number {0}", maxNumber);
                         break;
                     case 2:
-                        double Output1 = MaximumNumberCheck.FindMaxDoubleNumber(12.5, 18.9, 5.5);
-                        Console.WriteLine("Greatest No. is:"+Output1);
-                        break;
+                        Console.WriteLine("Enter the First number: ");
+                        float firstf = Convert.ToSingle(Console.ReadLine());
+
+                        Console.WriteLine("Enter the second number: ");
+                        float secondf = Convert.ToSingle(Console.ReadLine());
+
+                        Console.WriteLine("Enter the third number: ");
+                        float thirdf = Convert.ToSingle(Console.ReadLine());
+
+                        MaximumNumberCheck<float> maxnumObj1 = new MaximumNumberCheck<float>(firstf, secondf, thirdf);
+                        var maxNumber1 = maxnumObj1.GetMaxNum();
+
+                        Console.WriteLine("your max float number {0}", maxNumber1);
+                        break ;
                     case 3:
-                        string Output2 = MaximumNumberCheck.FindMaxStringNumber("abc", "MNO", "AbC");
-                        Console.WriteLine("Greatest No. is:"+Output2);
-                        break;
+                        Console.WriteLine("Enter the First string: ");
+                        string firsts = Console.ReadLine();
+
+                        Console.WriteLine("Enter the second string: ");
+                        string seconds = Console.ReadLine();
+
+                        Console.WriteLine("Enter the third string: ");
+                        string thirds = Console.ReadLine();
+
+                        MaximumNumberCheck<string> maxnumObj2 = new MaximumNumberCheck<string>(firsts, seconds, thirds);
+                        string last = maxnumObj2.GetMaxNum();
+
+                        Console.WriteLine("The last string in the sort order by comparedTo method is : {0}", last);
+                        break ;
                 }
             }
         }
