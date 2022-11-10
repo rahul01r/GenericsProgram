@@ -20,7 +20,19 @@ namespace FindMaximumNumber
                 return thirdNum;
                 
         }
-       
+        public static double FindMaxDoubleNumber(double firstNum, double secondNum, double thirdNum)
+        {
+            if (firstNum.CompareTo(secondNum) > 0 && firstNum.CompareTo(thirdNum) > 0)
+                return firstNum;
+
+            if (secondNum.CompareTo(firstNum) > 0 && secondNum.CompareTo(thirdNum) > 0)
+                return secondNum;
+
+            else
+                return thirdNum;
+
+        }
+
     }
 }
 
